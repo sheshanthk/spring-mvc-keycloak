@@ -1,0 +1,20 @@
+{
+  "realm" : "alpha",
+  "resource" : "client-01",
+  "auth-server-url" : "http://localhost:8080/auth",
+  "ssl-required" : "external",
+  "use-resource-role-mappings" : false,
+  "enable-cors" : false,
+  "bearer-only" : false,
+  "enable-basic-auth" : false,
+  "expose-token" : true,
+  "verify-token-audience" : true,
+
+  "connection-pool-size" : 20,
+  "disable-trust-manager": false,
+  "allow-any-hostname" : false,
+  "token-minimum-time-to-live" : 10,
+  "min-time-between-jwks-requests" : 10,
+  "public-key-cache-ttl": 86400,
+  "public-client": true
+}

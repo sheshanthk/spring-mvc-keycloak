@@ -1,0 +1,41 @@
+group 'com.accelerator'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+mainClassName = 'com.accelerator.Main'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+repositories {
+    jcenter()
+    maven {
+        url 'http://repo.spring.io/milestone/'
+    }
+}
+
+dependencies {
+    compile('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.47')
+    compile('org.springframework:spring-webmvc:5.0.1.RELEASE')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.9.2')
+    compile('jstl:jstl:1.2')
+    compile('org.slf4j:slf4j-jdk14:1.7.25')
+    compile('org.keycloak:keycloak-spring-security-adapter:9.0.3')
+    compile('org.springframework.security:spring-security-config:5.0.0.RELEASE')
+    compile('org.springframework.security:spring-security-web:5.0.0.RELEASE')
+}
